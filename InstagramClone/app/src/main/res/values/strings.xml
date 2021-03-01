@@ -2,5 +2,6 @@
     <string name="app_name">Instagram Clone</string>
     <string name="login">Login</string>
     <string name="takePicture">Take Picture</string>
-    <string name="submit">Submit</string>
+    <string name="submit">Post</string>
+    <string name="newPost">New Post</string>
 </resources>
