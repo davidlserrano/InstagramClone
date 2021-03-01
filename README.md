@@ -1,29 +1,23 @@
-# Project 2 - Simple Tweet
+# Project 3 - *Instagram Clone*
 
-Simple Tweet is an android app that allows a user to view his Twitter timeline. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
+**Instagram Clone** is a photo sharing app similar to Instagram but using Parse as its backend.
 
-Time spent: 7 hours spent in total
+Time spent: **7** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [x] User can **sign in to Twitter** using OAuth login
-- [x]	User can **view tweets from their home timeline**
-  - [x] User is displayed the username, name, and body for each tweet
-  - [ ] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
-- [x] User can refresh tweets timeline by pulling down to refresh
+- [x] User can sign up to create a new account using Parse authentication.
+- [ ] User can log in and log out of his or her account.
+- [x] The current signed in user is persisted across app restarts.
+- [x] User can take a photo, add a caption, and post it to "Instagram".
 
 The following **optional** features are implemented:
 
-- [x] User can view more tweets as they scroll with infinite pagination
-- [ ] Improve the user interface and theme the app to feel "twitter branded"
-- [ ] Links in tweets are clickable and will launch the web browser
-- [ ] User can tap a tweet to display a "detailed" view of that tweet
-- [ ] User can see embedded image media within the tweet detail view
-- [ ] User can watch embedded video within the tweet
-- [ ] User can open the twitter app offline and see last loaded tweets
-- [ ] On the Twitter timeline, leverage the CoordinatorLayout to apply scrolling behavior that hides / shows the toolbar.
+- [x] User sees app icon in home screen and styled bottom navigation view
+- [x] Style the feed to look like the real Instagram feed.
+- [ ] After the user submits a new post, show an indeterminate progress bar while the post is being uploaded to Parse.
 
 The following **additional** features are implemented:
 
@@ -33,12 +27,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/zZeJjbl.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/jSjegP4.gif' title='Video Walkthrough' width='300' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
-This project was definitely a bit more difficult to accomplish. I ran into a lot of issues trying to get the the log in authentication to work properly. Once I finally did get it to work, I accidentally ended up disconnecting the app through Twitter and was unable to log in again. I tried multiple fixes, however I ended up having to create an entirely new virtual device to start the app with a clean slate.
+
+Really enjoyed working on this project and did not run into any big issues while working on this one. Only real issue I realized had been happening was that I have been working with a git initialized in the parent folder from where the project's folder is located, meaning other projects have been pushed to Github along with it. I attempting added non-relevant folders into the .gitignore with no luck, and will have to figure out some way to fix this issue without losing my commit history.
 
 ## Open-source libraries used
 
@@ -47,8 +42,8 @@ This project was definitely a bit more difficult to accomplish. I ran into a lot
 
 ## License
 
-    Copyright 2021 David Serrano
-    
+    Copyright [2021] [David Serrano]
+
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
