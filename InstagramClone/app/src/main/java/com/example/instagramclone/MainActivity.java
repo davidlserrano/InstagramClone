@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     private File photoFile;
     private String photoFileName = "photo.jpg";
 
+    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
