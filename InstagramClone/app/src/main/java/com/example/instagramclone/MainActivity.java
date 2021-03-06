@@ -1,7 +1,9 @@
 package com.example.instagramclone;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,12 +13,14 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -37,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSubmit;
     private File photoFile;
     private String photoFileName = "photo.jpg";
+    private BottomNavigationView bottomNavigationView;
 
-    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         etDesc = findViewById(R.id.etDesc);
         btnCapture = findViewById(R.id.cameraBtn);
         btnSubmit = findViewById(R.id.submitBtn);
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +82,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                //the menu item being passed in here is one of the menu items previously defined in XML
+                Fragment fragment;
+                switch (item.getItemId()) {
+                    case R.id.action_home:
+                       // fragment = fragment1;
+                        Toast.makeText(MainActivity.this, "home", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.action_compose:
+                        //fragment = fragment2;
+                        Toast.makeText(MainActivity.this, "compose", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.action_profile:
+                    default:
+                        Toast.makeText(MainActivity.this, "profile", Toast.LENGTH_SHORT).show();
+                       // fragment = fragment3;
+                        break;
+                }
+                //fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
+                return true;
+            }
+        });
 
 
         queryPosts();
