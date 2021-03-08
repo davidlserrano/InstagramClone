@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.instagramclone.MainActivity;
@@ -49,7 +50,7 @@ public class ComposeFragment extends Fragment {
     private ImageView imageView;
     private EditText etDesc;
     private Button btnCapture;
-    private Button btnSubmit;
+    private TextView btnSubmit;
     private File photoFile;
     private String photoFileName = "photo.jpg";
 
