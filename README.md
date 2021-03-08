@@ -2,38 +2,47 @@
 
 **Instagram Clone** is a photo sharing app similar to Instagram but using Parse as its backend.
 
-Time spent: **7** hours spent in total
+Time spent: **8** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [x] User can sign up to create a new account using Parse authentication.
-- [ ] User can log in and log out of his or her account.
-- [x] The current signed in user is persisted across app restarts.
-- [x] User can take a photo, add a caption, and post it to "Instagram".
+- [x] User can view the last 20 posts submitted to "Instagram".
+- [x] The user should switch between different tabs - viewing all posts (feed view), compose (capture photos form camera) and profile tabs (posts made) using fragments and a Bottom Navigation View. (2 points)
+- [ ] User can pull to refresh the last 20 posts submitted to "Instagram".
 
 The following **optional** features are implemented:
 
 - [x] User sees app icon in home screen and styled bottom navigation view
 - [x] Style the feed to look like the real Instagram feed.
-- [ ] After the user submits a new post, show an indeterminate progress bar while the post is being uploaded to Parse.
+- [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
+- [x] Show the:
+    - [x] username each post
+    - [ ] creation time for each post  
+- [ ] User can tap a post to view post details, including timestamp and caption.
+- [ ] User Profiles
+      - [ ] Allow the logged in user to add a profile photo
+      - [ ] Display the profile photo with each post
+      - [ ] Tapping on a post's username or profile photo goes to that user's profile page and shows a grid view of the user's posts 
+- [ ] User can comment on a post and see all comments for each post in the post details screen.
+- [ ] User can like a post and see number of likes for each post in the post details screen.
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] User profile image included and referenced from database, however cannot update in App yet
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/jSjegP4.gif' title='Video Walkthrough' width='300' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/H9lAssi.gif' title='Video Walkthrough' width='300' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Really enjoyed working on this project and did not run into any big issues while working on this one. Only real issue I realized had been happening was that I have been working with a git initialized in the parent folder from where the project's folder is located, meaning other projects have been pushed to Github along with it. I attempting added non-relevant folders into the .gitignore with no luck, and will have to figure out some way to fix this issue without losing my commit history.
+The biggest challenge I faced during this project was not forgetting a ParseUser would not be logged in if the App was executed in a new virtual device. When I ran the app on a new virtual device, I was not prompted with the login screen and because of that I was unable to execute bits of code such as 'ParseUser.getCurrentUser()'. This was very frustrating as the application seemed to still be able to access the Back4App backend, however getting the current user kept resulting in null. It was not until I tinkered with the LoginActivity and the AndroidManifest that I realized the current user was not "logged in" and was allowed to bypass that.
 
 ## Open-source libraries used
 
